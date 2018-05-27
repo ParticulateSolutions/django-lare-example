@@ -1,0 +1,13 @@
+{% lare_extends 'page1.html' 'Site1.Page1' %}
+
+{% block content %}
+<div id="content">
+    <p>Tab2</p>
+    <script>
+        $(document).ready(function() {
+            $('#tab2_link').addClass('active');
+            $('#tab1_link').removeClass('active');
+        });
+    </script>
+</div>
+{% endblock content %}

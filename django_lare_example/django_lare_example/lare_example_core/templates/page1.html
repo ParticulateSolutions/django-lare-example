@@ -1,0 +1,30 @@
+{% lare_extends 'base.html' 'Site1' %}
+
+{% block page %}
+<div id="page">
+
+    <h1>Page1</h1>
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link" id="tab1_link" href="{% url 'page1_tab1' %}">Tab1</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="tab2_link" href="{% url 'page1_tab2' %}">Tab2</a>
+      </li>
+    </ul>
+    <div style="padding: 15px;">
+        <p>
+            {{ heavy_func }} loaded at {% now "jS F Y H:i" %}
+        </p>
+        {% block content %}
+            <div id="content"></div>
+        {% endblock content %}
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('#navbar-main').find('.nav-link').removeClass('active');
+            $('#page1_link').addClass('active');
+        });
+    </script>
+</div>
+{% endblock page %}

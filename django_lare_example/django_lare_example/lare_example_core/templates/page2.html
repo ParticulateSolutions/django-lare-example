@@ -1,0 +1,13 @@
+{% lare_extends 'base.html' 'Site1' %}
+
+{% block page %}
+<div id="page">
+    <h1>Page2</h1>
+    <script>
+        $(document).ready(function() {
+            $('#navbar-main').find('.nav-link').removeClass('active');
+            $('#page2_link').addClass('active');
+        });
+    </script>
+</div>
+{% endblock page %}
